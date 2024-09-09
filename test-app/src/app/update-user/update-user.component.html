@@ -1,0 +1,19 @@
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="user_name">
+    <mat-error *ngIf="updateForm.get('user_name')?.invalid">
+      {{ getErrorMessage('user_name') }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+    <mat-error *ngIf="updateForm.get('email')?.invalid">
+      {{ getErrorMessage('email') }}
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Update</button>
+</form>
